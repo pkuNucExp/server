@@ -1,0 +1,41 @@
+#%Module
+
+##
+## autocal modulefile
+##
+
+set _module_name [module-info name]
+set is_module_rm [module-info mode remove]
+set version 1.1
+set AUTOCAL_CURRPATH /mnt/misc/sw/x86_64/all/autocal/1.1
+prepend-path PATH $AUTOCAL_CURRPATH/bin
+
+proc ModulesHelp { } {
+  puts stderr "\t**********************************************************"
+  puts stderr "\t** AUTOCAL 1.1 8/95                                     **"
+  puts stderr "\t**                                                      **"
+  puts stderr "\t**  written by                                          **"
+  puts stderr "\t**               M.Wilhelm                              **"
+  puts stderr "\t**               Institute of Nuclear Physics           **"
+  puts stderr "\t**               University of Cologne                  **"
+  puts stderr "\t**               50937 Koeln, Germany                   **"
+  puts stderr "\t**               e-mail: nougi@ikp.uni-koeln.de         **"
+  puts stderr "\t**                                                      **"
+  puts stderr "\t**  This program uses the following libraries:          **"
+  puts stderr "\t**                                                      **"
+  puts stderr "\t**               mfile                                  **"
+  puts stderr "\t**               autofit                                **"
+  puts stderr "\t**               fitlib                                 **"
+  puts stderr "\t**               tv                                     **"
+  puts stderr "\t**                                                      **"
+  puts stderr "\t**                                                      **"
+  puts stderr "\t**********************************************************"
+  puts stderr ""
+  puts stderr ""
+  puts stderr "\tcompiled on May  9 2008"
+  puts stderr ""
+  puts stderr "\tusage: autocal \<spec_name\> -id \<source_id\> \[\-proto \-notail \-pol \-cal \<c1\> \<e1\> \<c2\> \<e2\> \-pt \-save\]"
+  puts stderr ""
+}
+
+module-whatis	"autocal program"

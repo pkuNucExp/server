@@ -1,0 +1,24 @@
+#%Module 20151120
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys        [uname sysname]
+set os         [uname release]
+
+set arch         [uname machine]
+
+set F90WRAP_LEVEL "20151120"
+
+set F90WRAP_BASE /mnt/misc/sw/x86_64/all/f90wrap/$F90WRAP_LEVEL
+
+prepend-path PATH $F90WRAP_BASE/bin
+prepend-path PYTHONPATH $F90WRAP_BASE/lib/python2.7/site-packages
+
+proc ModulesHelp { } {
+  puts stderr " This module provides F90wrap"
+  puts stderr ""
+  puts stderr "-----------"
+  puts stderr ""
+}
+
+module-whatis   "f90wrap - https://github.com/jameskermode/f90wrap"

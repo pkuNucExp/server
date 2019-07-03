@@ -1,0 +1,27 @@
+#%Module 1.0
+
+#prereq PrgEnv-gnu
+#prereq gcc/4.9.2
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys        [uname sysname]
+set os         [uname release]
+
+set version     387
+
+set GARFIELD_LEVEL $version
+set GARFIELD_CURRPATH /mnt/misc/sw/x86_64/Debian/8/garfield/$GARFIELD_LEVEL
+
+prepend-path PATH            $GARFIELD_CURRPATH/
+
+prepend-path GARFIELD_LIBRARIES      $GARFIELD_CURRPATH/lib
+
+
+proc ModulesHelp { } {
+  puts stderr "  Garfield++ "
+  puts stderr "-----------"
+  puts stderr ""
+}
+
+module-whatis   "Garfield++ "

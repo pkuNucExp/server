@@ -1,0 +1,25 @@
+#%Module 1.0
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys        [uname sysname]
+set os         [uname release]
+
+set version     20030812
+
+set TV_LEVEL $version
+set TV_CURRPATH /mnt/misc/sw/x86_64/Debian/8/tv/$TV_LEVEL
+
+prepend-path PATH            $TV_CURRPATH/bin
+prepend-path TVPATH          $TV_CURRPATH/lib/tv
+setenv XAPPLRESDIR           $TV_CURRPATH/X11/app-defaults
+
+proc ModulesHelp { } {
+  puts stderr " TV is a spectra- and matrix-analysis program which runs"
+  puts stderr " under the operating system UNIX and has been successfully"
+  puts stderr " tested under SUNOS 5.5.1, Ultrix 4.3A, HP-UX 9.01 and Linux."
+  puts stderr "-----------"
+  puts stderr ""
+}
+
+module-whatis   "TV is a spectra- and matrix-analysis program ($TV_LEVEL)"

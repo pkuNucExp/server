@@ -1,0 +1,42 @@
+#%Module 1.0
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys        [uname sysname]
+set os         [uname release]
+
+set GCC_LEVEL 6.4.0
+set GCC_MAJLEVEL 6.4
+set GCC_CURPATH /mnt/misc/sw/x86_64/all/gnu/gcc/6.4.0
+
+### you'd only need these for non-system-GCC
+prepend-path PATH            $GCC_CURPATH/bin
+prepend-path MANPATH         $GCC_CURPATH/share/man
+prepend-path INFOPATH        $GCC_CURPATH/share/info
+prepend-path LD_LIBRARY_PATH $GCC_CURPATH/lib:$GCC_CURPATH/lib64
+
+setenv GCC_PATH    $GCC_CURPATH
+setenv GCC_VERSION $GCC_LEVEL
+setenv GNU_VERSION $GCC_LEVEL
+
+setenv CC  $GCC_CURPATH/bin/gcc-$GCC_MAJLEVEL
+setenv CXX $GCC_CURPATH/bin/g++-$GCC_MAJLEVEL
+setenv F77 $GCC_CURPATH/bin/gfortran-$GCC_MAJLEVEL
+setenv FC $GCC_CURPATH/bin/gfortran-$GCC_MAJLEVEL
+setenv F90 $GCC_CURPATH/bin/gfortran-$GCC_MAJLEVEL
+
+proc ModulesHelp { } {
+  puts stderr " This module provides the system GNU toolchain"
+  puts stderr " (gcc, g++, gfortran) shipped with Debian 7.0 (Wheezy)."
+  puts stderr ""
+  puts stderr " To keep your scripts and makefiles compatible across"
+  puts stderr " different versions of this module, use the environment"
+  puts stderr " variables provided with this module to refer to the"
+  puts stderr " compilers:"
+  puts stderr ""
+  puts stderr " \$CC (C), \$CXX (C++), and \$F77/\$FC/\$F90 (Fortran)"
+  puts stderr "-----------"
+  puts stderr ""
+}
+
+module-whatis   "GCC toolchain ($GCC_LEVEL - Debian 8.0 system gcc)"

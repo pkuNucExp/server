@@ -1,0 +1,77 @@
+#%Module 1.0
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys           [uname sysname]
+set os            [uname release]
+
+set arch          [uname machine]
+
+# intel calls x86_64 intel64
+# and 32-bit ia32
+if {$arch == "x86_64"} { set arch "intel64" }
+if {$arch == "i686"}   { set arch "ia32" }
+
+set INTEL_LEVEL 12.1.3
+
+setenv INTEL_VERSION $INTEL_LEVEL
+
+set INTEL_BASE /mnt/misc/sw/indep/all/intel/2011.9.293/composer_xe_2011_sp1.9.293
+
+# programs look for Licenses dir, Ryan had named is lower-case licenses, maybe to hide them?
+prepend-path INTEL_LICENSE_FILE $INTEL_BASE/Licenses
+
+setenv MKLROOT $INTEL_BASE/mkl
+
+# CPATH is includes, I guess?
+prepend-path CPATH $INTEL_BASE/mkl/include
+prepend-path CPATH $INTEL_BASE/tbb/include
+prepend-path INCLUDE $INTEL_BASE/tbb/include
+prepend-path INCLUDE $INTEL_BASE/mkl/include
+
+setenv IPPROOT $INTEL_BASE/ipp
+
+setenv IDB_HOME $INTEL_BASE/bin/$arch
+
+prepend-path LD_LIBRARY_PATH $INTEL_BASE/compiler/lib/$arch
+prepend-path LD_LIBRARY_PATH $INTEL_BASE/ipp/../compiler/lib/$arch
+prepend-path LD_LIBRARY_PATH $INTEL_BASE/ipp/lib/$arch
+prepend-path LD_LIBRARY_PATH $INTEL_BASE/compiler/lib/$arch
+prepend-path LD_LIBRARY_PATH $INTEL_BASE/mkl/lib/$arch
+prepend-path LD_LIBRARY_PATH $INTEL_BASE/debugger/lib/$arch
+prepend-path LD_LIBRARY_PATH $INTEL_BASE/mpirt/lib/$arch
+
+prepend-path LIBRARY_PATH $INTEL_BASE/compiler/lib/$arch
+prepend-path LIBRARY_PATH $INTEL_BASE/ipp/../compiler/lib/$arch
+prepend-path LIBRARY_PATH $INTEL_BASE/ipp/lib/$arch
+prepend-path LIBRARY_PATH $INTEL_BASE/compiler/lib/$arch
+prepend-path LIBRARY_PATH $INTEL_BASE/mkl/lib/$arch
+
+prepend-path MANPATH $INTEL_BASE/man/en_US
+
+prepend-path PATH $INTEL_BASE/bin/intel64
+prepend-path PATH $INTEL_BASE/mpirt/bin/intel64
+
+setenv TBBROOT $INTEL_BASE/tbb
+
+setenv CC  $INTEL_BASE/bin/$arch/icc
+setenv CXX $INTEL_BASE/bin/$arch/icpc
+setenv F77 $INTEL_BASE/bin/$arch/ifort
+setenv FC  $INTEL_BASE/bin/$arch/ifort
+setenv F90 $INTEL_BASE/bin/$arch/ifort
+
+proc ModulesHelp { } {
+  puts stderr " This module provides the Intel compiler toolchain"
+  puts stderr " (icc, icpc, ifort)"
+  puts stderr ""
+  puts stderr " To keep your scripts and makefiles compatible across"
+  puts stderr " different versions of this module, use the environment"
+  puts stderr " variables provided with this module to refer to the"
+  puts stderr " compilers:"
+  puts stderr ""
+  puts stderr " \$CC (C), \$CXX (C++), and \$F77/\$FC/\$F90 (Fortran)"
+  puts stderr "-----------"
+  puts stderr ""
+}
+
+module-whatis   "Intel toolchain"

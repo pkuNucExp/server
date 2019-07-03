@@ -1,0 +1,27 @@
+#%Module 1.0
+
+prereq PrgEnv-gnu
+prereq gcc/4.9.2
+prereq dawn/gnu
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys        [uname sysname]
+set os         [uname release]
+
+set version     1.36a
+
+set DAVID_LEVEL $version
+set DAVID_CURRPATH /mnt/misc/sw/x86_64/Debian/8/david/gnu/$DAVID_LEVEL
+
+prepend-path PATH            $DAVID_CURRPATH/bin
+
+proc ModulesHelp { } {
+  puts stderr "  DAVID (DAwn's Visual Intersection Debugger) is a visual tool to investigate "
+  puts stderr "  polygon intersection of shapes (physical volumes in Geant4 terminology) "
+  puts stderr "  described in a DAWN-format (g4.prim-format) file."
+  puts stderr "-----------"
+  puts stderr ""
+}
+
+module-whatis   "DAVID (DAwn's Visual Intersection Debugger)"

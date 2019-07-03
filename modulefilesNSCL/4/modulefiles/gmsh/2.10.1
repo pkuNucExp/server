@@ -1,0 +1,28 @@
+#%Module 1.0
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys        [uname sysname]
+set os         [uname release]
+
+set arch         [uname machine]
+
+set GMSH_LEVEL "2.10.1"
+
+setenv GMSH_VERSION $GMSH_LEVEL
+
+set GMSH_BASE /mnt/misc/sw/indep/all/gmsh/$GMSH_LEVEL
+
+prepend-path PATH $GMSH_BASE/bin
+
+set homedir $::env(HOME)
+
+proc ModulesHelp { } {
+  puts stderr " This module provides Gmsh"
+  puts stderr ""
+  puts stderr "-----------"
+  puts stderr ""
+}
+
+module-whatis   "Gmsh"
+

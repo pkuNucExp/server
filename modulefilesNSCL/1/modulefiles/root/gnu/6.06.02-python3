@@ -1,0 +1,63 @@
+#%Module 1.0
+
+#prereq PrgEnv-gnu
+#prereq gcc/4.9.2
+
+
+conflict root/intel
+conflict root/llvm
+conflict root/pgi
+conflict root/pathscale
+conflict PrgEnv-intel
+conflict PrgEnv-pgi
+conflict PrgEnv-pathscale
+conflict PrgEnv-llvm
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys        [uname sysname]
+set os         [uname release]
+
+set version     6.06.02-python3
+
+set ROOT_LEVEL $version
+set ROOT_CURRPATH /mnt/misc/sw/x86_64/Debian/8/root/gnu/$ROOT_LEVEL
+
+prepend-path PATH            $ROOT_CURRPATH/bin
+prepend-path LD_LIBRARY_PATH $ROOT_CURRPATH/lib
+prepend-path DYLD_LIBRARY_PATH $ROOT_CURRPATH/lib
+prepend-path SHLIB_PATH      $ROOT_CURRPATH/lib
+prepend-path LIBPATH         $ROOT_CURRPATH/lib
+prepend-path PYTHONPATH      $ROOT_CURRPATH/lib/root
+prepend-path MANPATH         $ROOT_CURRPATH/share/man/man1
+prepend-path INFOPATH        $ROOT_CURRPATH/share/info
+
+setenv ROOT_PATH    $ROOT_CURRPATH
+setenv ROOT_VERSION $ROOT_LEVEL
+
+setenv ROOTSYS $ROOT_CURRPATH
+
+proc ModulesHelp { } {
+  puts stderr " The ROOT system provides a set of OO frameworks with all"
+  puts stderr " the functionality needed to handle and analyze large amounts"
+  puts stderr " of data in a very efficient way. Having the data defined as"
+  puts stderr " a set of objects, specialized storage methods are used to get"
+  puts stderr " direct access to the separate attributes of the selected"
+  puts stderr " objects, without having to touch the bulk of the data."
+  puts stderr "-----------"
+  puts stderr ""
+}
+ 
+set mod_list { \
+  PrgEnv-gnu \
+  cmake \
+}
+
+foreach prod $mod_list {
+  module unload ${prod}
+  module load ${prod}
+}
+
+module-whatis   "ROOT analysis framework ($ROOT_LEVEL)"
+
+

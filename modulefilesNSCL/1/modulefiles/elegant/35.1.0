@@ -1,0 +1,21 @@
+#%Module 1.0
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys        [uname sysname]
+set os         [uname release]
+
+set version    35.1.0
+
+set ELEGANT_LEVEL $version
+set ELEGANT_CURRPATH /mnt/misc/sw/x86_64/Debian/8/elegant/$ELEGANT_LEVEL
+
+setenv RPN_DEFNS $ELEGANT_CURRPATH/defns.rpn
+
+prepend-path PATH $ELEGANT_CURRPATH/epics/base/bin/linux-x86_64/
+prepend-path PATH $ELEGANT_CURRPATH/epics/extensions/bin/linux-x86_64/
+prepend-path PATH $ELEGANT_CURRPATH/oag/apps/bin/linux-x86_64/
+
+prepend-path LD_LIBRARY_PATH $ELEGANT_CURRPATH/epics/base/lib
+prepend-path LD_LIBRARY_PATH $ELEGANT_CURRPATH/epics/extensions/lib/linux-x86_64/lib
+prepend-path LD_LIBRARY_PATH $ELEGANT_CURRPATH/oag/apps/lib/linux-x86_64

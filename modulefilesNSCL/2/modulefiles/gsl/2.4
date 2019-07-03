@@ -1,0 +1,27 @@
+#%Module 1.0
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys        [uname sysname]
+set os         [uname release]
+
+set arch         [uname machine]
+
+set GSL_LEVEL "2.4"
+
+setenv GSL_VERSION $GSL_LEVEL
+
+set GSL_BASE /mnt/misc/sw/x86_64/all/gsl/$GSL_LEVEL
+
+prepend-path PATH $GSL_BASE/bin
+prepend-path LD_LIBRARY_PATH $GSL_BASE/lib
+
+
+proc ModulesHelp { } {
+  puts stderr " This module provides GNU Scientific Library"
+  puts stderr ""
+  puts stderr "-----------"
+  puts stderr ""
+}
+
+module-whatis   "GNU Scientific Library"

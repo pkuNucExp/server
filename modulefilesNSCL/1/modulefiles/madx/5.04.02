@@ -1,0 +1,14 @@
+#%Module 1.0
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys        [uname sysname]
+set os         [uname release]
+
+set arch         [uname machine]
+
+set MADX_LEVEL 5.04.02
+
+set MADX_BASE /mnt/misc/sw/x86_64/Debian/8/madx/$MADX_LEVEL
+
+prepend-path PATH $MADX_BASE

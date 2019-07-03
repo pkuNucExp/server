@@ -1,0 +1,24 @@
+#%Module 1.0
+
+set _module_name [module-info name]
+set is_module_rm [module-info mode remove]
+set sys          [uname sysname]
+set os           [uname release]
+set arch         [uname machine]
+
+set ANSYS_BASE /mnt/misc/sw/x86_64/all/ansys/v16
+
+prepend-path PATH $ANSYS_BASE/ansys_inc/v160/fluent/bin
+prepend-path PATH $ANSYS_BASE/ansys_inc/v160/CFX/bin
+prepend-path PATH $ANSYS_BASE/ansys_inc/v160/aisol
+prepend-path PATH $ANSYS_BASE/ansys_inc/v160/Framework/bin/Linux64
+prepend-path PATH $ANSYS_BASE/ansys_inc/v160/RSM/Config/tools/linux
+
+proc ModulesHelp { } {
+  puts stderr " This module provides ANSYS"
+  puts stderr ""
+  puts stderr "-----------"
+  puts stderr ""
+}
+
+module-whatis   "ANSYS Engineering Software"

@@ -1,0 +1,22 @@
+#%Module 1.0
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys        [uname sysname]
+set os         [uname release]
+
+set SUPERMONGO_LEVEL 2.4.36
+set version $SUPERMONGO_LEVEL
+
+set SUPERMONGO_PATH /mnt/misc/sw/x86_64/Debian/8/supermongo/$SUPERMONGO_LEVEL
+
+prepend-path PATH            $SUPERMONGO_PATH/bin
+prepend-path MANPATH            $SUPERMONGO_PATH/man
+
+proc ModulesHelp { } {
+  puts stderr " SM is an interactive plotting programme with a flexible command language."
+  puts stderr "-----------"
+  puts stderr ""
+}
+
+module-whatis   "SuperMongo plotting program"

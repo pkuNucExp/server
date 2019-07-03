@@ -1,0 +1,58 @@
+#%Module
+
+##
+## windus modulefile
+##
+
+## Note: it might be nice to bail out of module load if user doesn't
+## have access to the wind-us installation.  As-is, this script will setup
+## the app, but unauthorized users will be blocked from using the software
+## based on file perms on the software installation.
+
+# name of this module
+set myName wind-us
+
+# the variable $ModulesCurrentModulefile has the full path and name
+# of this modulefile.  inspect it to compute where we are.
+
+# version is the filename of this module file, if not, edit here to
+# manaully set it to the correct value.
+# split the path and the filename is the last item
+set mfPathList [split $ModulesCurrentModulefile /]
+set myVersion [lindex $mfPathList end]
+
+# the mount point of "sw", including the string "sw"
+set mfMntPoint sw
+set mfPathList [split $ModulesCurrentModulefile /]
+set mfMntPointIndex [lsearch $mfPathList $mfMntPoint]
+set mfMntPoint [join [lrange $mfPathList 0 $mfMntPointIndex] /]
+
+# directory this .modulefiles is in
+set mfDir .modulefiles
+set mfPathList [split $ModulesCurrentModulefile /]
+set mfDirIndex [lsearch $mfPathList $mfDir]
+set mfDirBase [join [lrange $mfPathList 0 $mfDirIndex-1] /]
+
+# where app lives
+set appBase $mfDirBase/$myName/$myVersion
+
+# vars for app
+set mySystem LINUX64-GLIBC2.19
+setenv SYSTEM $mySystem
+set myCpu OPTERON
+setenv SYSTEM_CPU $myCpu
+setenv CFDROOT $appBase
+setenv TOOLSROOT $appBase
+setenv WIND_MP_MODE MPI
+
+# set path
+prepend-path PATH $appBase/bin
+prepend-path PATH $appBase/$mySystem/$myCpu/bin
+
+proc ModulesHelp { } {
+  puts stderr "\t WIND-US copied from Lucid install at /soft/x86_64/lucid/wind-us."
+  puts stderr
+  puts stderr "\n\n\t!!! WIND-US IS CONTROLLED SOFTWARE !!!\n\t!!! ONLY AUTHORIZED USERS MAY USE WIND-US !!!\n\t!!! DO NOT USE WITHOUT SPECIFIC AUTHORIZATION TO USE WIND-US !!!\n\n"
+}
+
+module-whatis	"WIND-US CFD Program\n\n\t!!! WIND-US IS CONTROLLED SOFTWARE !!!\n\t!!! ONLY AUTHORIZED USERS MAY USE WIND-US !!!\n\t!!! DO NOT USE WITHOUT SPECIFIC AUTHORIZATION TO USE WIND-US !!!\n\n"

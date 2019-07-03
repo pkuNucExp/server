@@ -1,0 +1,29 @@
+#%Module 1.0
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys        [uname sysname]
+set os         [uname release]
+
+set version	2015-08-19
+
+set ELMER_LEVEL $version
+set ELMER_CURRPATH /mnt/misc/sw/x86_64/Debian/8/elmer/$ELMER_LEVEL
+
+prepend-path PATH            $ELMER_CURRPATH/bin
+prepend-path LD_LIBRARY_PATH $ELMER_CURRPATH/lib
+
+setenv ELMER_HOME    $ELMER_CURRPATH
+setenv ELMER_VERSION $ELMER_LEVEL
+
+proc ModulesHelp { } {
+  puts stderr " Elmer is an open source multiphysical simulation software mainly developed by CSC - IT Center for Science (CSC)."
+  puts stderr " Elmer development was started 1995 in collaboration with Finnish Universities, research institutes and industry. After it's"
+  puts stderr " open source publication in 2005, the use and development of Elmer has become international."
+  puts stderr " Elmer includes physical models of fluid dynamics, structural mechanics, electromagnetics, heat transfer and acoustics,"
+  puts stderr " for example. These are described by partial differential equations which Elmer solves by the Finite Element Method (FEM)."
+  puts stderr "-----------"
+  puts stderr ""
+}
+
+module-whatis   "Elmer multiphysical simulation software"

@@ -1,0 +1,27 @@
+#%Module 1.0
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys        [uname sysname]
+set os         [uname release]
+
+set arch         [uname machine]
+
+set CZMQ_LEVEL "4.1.1"
+
+setenv CZMQ_VERSION $CZMQ_LEVEL
+
+set CZMQ_BASE /mnt/misc/sw/x86_64/all/czmq/$CZMQ_LEVEL
+
+prepend-path PATH $CZMQ_BASE/bin
+prepend-path LD_LIBRARY_PATH $CZMQ_BASE/lib
+
+
+proc ModulesHelp { } {
+  puts stderr "High-level C Binding for ZeroMQ"
+  puts stderr ""
+  puts stderr "-----------"
+  puts stderr ""
+}
+
+module-whatis   "CZMQ"

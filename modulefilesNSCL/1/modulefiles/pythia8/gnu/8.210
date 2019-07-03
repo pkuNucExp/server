@@ -1,0 +1,37 @@
+#%Module 1.0
+
+#prereq PrgEnv-gnu
+#prereq gcc/4.9.2
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys        [uname sysname]
+set os         [uname release]
+
+set version     8.210
+
+set PYTHIA8_LEVEL $version
+set PYTHIA8_CURRPATH /mnt/misc/sw/x86_64/Debian/8/pythia8/gnu/$PYTHIA8_LEVEL
+
+prepend-path LD_LIBRARY_PATH $PYTHIA8_CURRPATH/lib
+
+setenv PYTHIA8_PATH    $PYTHIA8_CURRPATH
+setenv PYTHIA8_VERSION $PYTHIA8_LEVEL
+setenv PYTHIA8_LDFLAGS "-Wl,-rpath=$PYTHIA8_CURRPATH/lib -L$PYTHIA8_CURRPATH/lib -lpythia8"
+setenv PYTHIA8_CFLAGS "-I$PYTHIA8_CURRPATH/include"
+
+proc ModulesHelp { } {
+  puts stderr " The Pythia program is a standard tool for the generation of high-energy collisions,"
+  puts stderr " comprising a coherent set of physics models for the evolution from a few-body"
+  puts stderr " hard process to a complex multihadronic nal state. It contains a library of hard"
+  puts stderr " processes and models for initial- and nal-state parton showers, multiple parton-"
+  puts stderr " parton interactions, beam remnants, string fragmentation and particle decays. It"
+  puts stderr " also has a set of utilities and interfaces to external programs. While previous versions"
+  puts stderr " were written in Fortran, Pythia 8 represents a complete rewrite in C++."
+  puts stderr "-----------"
+  puts stderr ""
+}
+
+
+
+module-whatis   "PYTHIA8 event generator"

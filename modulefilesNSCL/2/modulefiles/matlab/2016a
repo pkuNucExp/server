@@ -1,0 +1,25 @@
+#%Module 1.0
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys        [uname sysname]
+set os         [uname release]
+
+set arch         [uname machine]
+
+set MATLAB_LEVEL "2016a"
+
+setenv MATLAB_VERSION $MATLAB_LEVEL
+
+set MATLAB_BASE /mnt/misc/sw/x86_64/all/matlab/$MATLAB_LEVEL
+
+prepend-path PATH $MATLAB_BASE/bin
+
+proc ModulesHelp { } {
+  puts stderr " This module provides Mathlab"
+  puts stderr ""
+  puts stderr "-----------"
+  puts stderr ""
+}
+
+module-whatis   "The Mathworks Matlab"

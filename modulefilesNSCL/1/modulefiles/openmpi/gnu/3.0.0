@@ -1,0 +1,62 @@
+#%Module 1.0
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys        [uname sysname]
+set os         [uname release]
+
+set arch         [uname machine]
+
+set GNU_LEVEL 4.9.2
+set OPENMPI_LEVEL 3.0.0
+setenv OPENMPI_VERSION $OPENMPI_LEVEL
+
+prereq PrgEnv-gnu
+prereq gcc/$GNU_LEVEL
+
+conflict openmpi
+conflict openmpi/gnu
+conflict openmpi/intel
+conflict openmpi/pgi
+conflict openmpi/llvm
+conflict openmpi/pathscale
+
+set OMPI_BASE /mnt/misc/sw/x86_64/Debian/8/openmpi/gnu/$OPENMPI_LEVEL
+
+setenv MPIROOT $OMPI_BASE
+setenv MPI_ROOT $OMPI_BASE
+
+prepend-path LD_LIBRARY_PATH $OMPI_BASE/lib
+prepend-path MANPATH $OMPI_BASE/man
+prepend-path PATH $OMPI_BASE/bin
+
+setenv MPICC  $OMPI_BASE/bin/mpicc
+setenv MPICXX $OMPI_BASE/bin/mpiCC
+setenv MPIF77 $OMPI_BASE/bin/mpif77
+setenv MPIFC  $OMPI_BASE/bin/mpif90
+setenv MPIF90 $OMPI_BASE/bin/mpif90
+
+proc ModulesHelp { } {
+  puts stderr " This module provides the OpenMPI message passing library"
+  puts stderr ""
+  puts stderr " The Open MPI Project is an open source MPI-2 implementation"
+  puts stderr " that is developed and maintained by a consortium of academic,"
+  puts stderr " research, and industry partners. Open MPI is therefore able"
+  puts stderr " to combine the expertise, technologies, and resources from"
+  puts stderr " all across the High Performance Computing community in order"
+  puts stderr " to build the best MPI library available. Open MPI offers"
+  puts stderr " advantages for system and software vendors, application"
+  puts stderr " developers and computer science researchers."
+  puts stderr ""
+  puts stderr " To keep your scripts and makefiles compatible across"
+  puts stderr " different versions of this module, use the environment"
+  puts stderr " variables provided with this module to refer to the"
+  puts stderr " compilers:"
+  puts stderr ""
+  puts stderr " \$MPICC (C), \$MPICXX (C++), and \$MPIF77/\$MPIFC/\$MPIF90 (Fortran)"
+  puts stderr "-----------"
+  puts stderr ""
+}
+
+module-whatis   "OpenMPI ($OPENMPI_LEVEL) for GNU toolchain ($GNU_LEVEL)"
+

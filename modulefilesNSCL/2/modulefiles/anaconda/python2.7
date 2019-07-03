@@ -1,0 +1,22 @@
+#%Module 1.0
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys        [uname sysname]
+set os         [uname release]
+
+set ANACONDA_LEVEL python2.7
+set version $ANACONDA_LEVEL
+
+set ANACONDA_CURRPATH /mnt/misc/sw/x86_64/all/anaconda/$ANACONDA_LEVEL
+
+### you'd only need these for non-system-LLVM
+prepend-path PATH            $ANACONDA_CURRPATH/bin
+
+proc ModulesHelp { } {
+  puts stderr " This module provides Anaconda"
+  puts stderr "-----------"
+  puts stderr ""
+}
+
+module-whatis   "Anaconda - python2.7 toolkit"

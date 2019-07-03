@@ -1,0 +1,23 @@
+#%Module 1.0
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys        [uname sysname]
+set os         [uname release]
+
+set version     2.32
+
+set TF_LEVEL $version
+set TF_CURRPATH /mnt/misc/sw/x86_64/Debian/8/topfit/$TF_LEVEL
+
+prepend-path PATH            $TF_CURRPATH/bin
+
+proc ModulesHelp { } {
+  puts stderr " Program TOPFIT 2.32 10/96"
+  puts stderr " Another fine product of I.Wiedenhoever & B.Steckemetz"
+  puts stderr " This program is public domain, SHARE AND ENJOY !"
+  puts stderr "-----------"
+  puts stderr ""
+}
+
+module-whatis   "TOPFIT"

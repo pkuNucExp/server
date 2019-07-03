@@ -1,0 +1,92 @@
+#%Module 1.0
+
+#prereq PrgEnv-gnu
+#prereq gcc/4.9.2
+
+### we force-load cmake instead
+#prereq cmake
+#prereq dawn/gnu
+#prereq david/gnu
+
+conflict geant4/gnu
+conflict geant4/intel
+conflict geant4/llvm
+conflict geant4/pgi
+conflict geant4/pathscale
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys        [uname sysname]
+set os         [uname release]
+
+set version    10.04.02
+
+set GEANT4_LEVEL $version
+set GEANT4_CURRPATH /mnt/misc/sw/x86_64/Debian/8/geant4/gnu/$GEANT4_LEVEL-angular
+
+# to find these, source share/Geant4-9.6.2/geant4make/geant4make.sh
+# then check the G4* environment
+
+# data files ...
+setenv G4ABLADATA        $GEANT4_CURRPATH/share/Geant4-10.4.2/data/G4ABLA3.1
+setenv G4LEDATA          $GEANT4_CURRPATH/share/Geant4-10.4.2/data/G4EMLOW7.3
+setenv G4LEVELGAMMADATA  $GEANT4_CURRPATH/share/Geant4-10.4.2/data/PhotonEvaporation5.2
+setenv G4NEUTRONHPDATA   $GEANT4_CURRPATH/share/Geant4-10.4.2/data/G4NDL4.5
+setenv G4NEUTRONXSDATA   $GEANT4_CURRPATH/share/Geant4-10.4.2/data/G4NEUTRONXS1.4
+setenv G4PIIDATA         $GEANT4_CURRPATH/share/Geant4-10.4.2/data/G4PII1.3
+setenv G4RADIOACTIVEDATA $GEANT4_CURRPATH/share/Geant4-10.4.2/data/RadioactiveDecay5.2
+setenv G4REALSURFACEDATA $GEANT4_CURRPATH/share/Geant4-10.4.2/data/RealSurface2.1.1
+setenv G4SAIDXSDATA      $GEANT4_CURRPATH/share/Geant4-10.4.2/data/G4SAIDDATA1.1
+setenv G4ENSDFSTATEDATA      $GEANT4_CURRPATH/share/Geant4-10.4.2/data/G4ENSDFSTATE2.2
+
+# later use ...
+set homedir $::env(HOME)
+
+# generic stuff
+setenv G4INSTALL $GEANT4_CURRPATH/share/Geant4-10.4.2/geant4make
+setenv G4INCLUDE $GEANT4_CURRPATH/include/Geant4
+setenv G4LIB     $GEANT4_CURRPATH/lib/Geant4-10.1.2
+setenv G4SYSTEM  "Linux-g++"
+setenv G4WORKDIR $homedir/geant4_workdir
+
+# build options
+setenv G4LIB_BUILD_SHARED 1
+setenv G4LIB_USE_ZLIB 1
+setenv G4UI_USE_QT 1
+setenv G4UI_USE_TCSH 1
+setenv G4UI_USE_XM 1
+setenv G4VIS_USE_OPENGLQT 1
+setenv G4VIS_USE_OPENGLX 1
+setenv G4VIS_USE_OPENGLXM 1
+setenv G4VIS_USE_RAYTRACERX 1
+
+# things people normally care about
+prepend-path PATH            $GEANT4_CURRPATH/bin
+prepend-path LD_LIBRARY_PATH $GEANT4_CURRPATH/lib
+
+setenv GEANT4_PATH    $GEANT4_CURRPATH
+setenv GEANT4_VERSION $GEANT4_LEVEL
+
+proc ModulesHelp { } {
+  puts stderr "Geant4 is a toolkit for the simulation of the passage of"
+  puts stdder " particles through matter. Its areas of application include"
+  puts stderr " high energy, nuclear and accelerator physics, as well as"
+  puts stderr " studies in medical and space science."
+  puts stderr "-----------"
+  puts stderr ""
+}
+
+set mod_list { \
+  PrgEnv-gnu \
+  cmake \
+  dawn/gnu \
+  david/gnu \
+}
+
+foreach prod $mod_list {
+  module unload ${prod}
+  module load ${prod}
+}
+
+module-whatis   "GEANT4 simulation toolkit"
+

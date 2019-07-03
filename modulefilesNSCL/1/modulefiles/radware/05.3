@@ -1,0 +1,47 @@
+#%Module 1.0
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys        [uname sysname]
+set os         [uname release]
+
+set version     05.3
+
+set RADWARE_LEVEL $version
+set RADWARE_CURRPATH /mnt/misc/sw/x86_64/Debian/8/radware/$RADWARE_LEVEL
+
+prepend-path PATH            $RADWARE_CURRPATH/bin
+
+setenv RADWARE_FONT_LOC      $RADWARE_CURRPATH/font
+setenv RADWARE_ICC_LOC       $RADWARE_CURRPATH/icc
+setenv RADWARE_GFONLINE_LOC  $RADWARE_CURRPATH/doc
+
+### per scott williams YAA-727-50159
+### these look like preferences rather than things that should be site
+### defaults
+#setenv RADWARE_CURSOR_BELL y
+## setenv RADWARE_CURSOR_BELL n
+
+# this variable specifies whether to overwrite existing files
+#setenv RADWARE_OVERWRITE_FILE ask
+## setenv RADWARE_OVERWRITE_FILE y
+## setenv RADWARE_OVERWRITE_FILE n
+
+# this variable specifies whether to require the return key in Y/N questions
+#setenv RADWARE_AWAIT_RETURN n
+## setenv RADWARE_AWAIT_RETURN y
+
+# this variable specifies the requested initial size of the level scheme
+# display in xmgls, xmesc and xmlev (width and height in pixels)
+setenv RADWARE_XMG_SIZE 600x500
+
+
+proc ModulesHelp { } {
+  puts stderr " RadWare is a software package for interactive graphical"
+  puts stderr " analysis of gamma-ray coincidence data."
+  puts stderr "-----------"
+  puts stderr ""
+}
+
+module-whatis   "RadWare ($RADWARE_LEVEL)"
+

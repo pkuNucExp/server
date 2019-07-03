@@ -1,0 +1,39 @@
+#%Module 1.0
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys        [uname sysname]
+set os         [uname release]
+
+set arch         [uname machine]
+
+conflict mathematica
+
+set MATH_LEVEL "9.0.1"
+
+setenv MATHEMATICA_VERSION $MATH_LEVEL
+
+set MATH_BASE /mnt/misc/sw/indep/all/mathematica/$MATH_LEVEL
+
+# this is system-wide config location
+setenv MATHEMATICA_BASE $MATH_BASE/MATHEMATICA_BASE
+
+prepend-path PATH $MATH_BASE/bin
+
+set homedir $::env(HOME)
+
+# daft mathpass crap
+file mkdir "$homedir/.Mathematica/Licensing"
+file attributes "$homedir/.Mathematica/" -permissions 0750
+file attributes "$homedir/.Mathematica/Licensing" -permissions 0750
+file delete -force "$homedir/.Mathematica/Licensing/mathpass"
+file copy -force "$MATH_BASE/Licensing/mathpass" "$homedir/.Mathematica/Licensing/mathpass"
+
+proc ModulesHelp { } {
+  puts stderr " This module provides Wolfram Mathematica"
+  puts stderr ""
+  puts stderr "-----------"
+  puts stderr ""
+}
+
+module-whatis   "Wolfram Mathematica"

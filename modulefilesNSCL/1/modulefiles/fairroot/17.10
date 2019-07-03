@@ -1,0 +1,22 @@
+#%Module 1.0
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys        [uname sysname]
+set os         [uname release]
+
+set arch         [uname machine]
+
+set FAIRROOT_LEVEL 17.10
+
+set FAIRROOT_BASE /mnt/misc/sw/x86_64/Debian/8/fairroot/$FAIRROOT_LEVEL
+
+prepend-path SIMPATH $FAIRROOT_BASE/fairsoft
+prepend-path ROOTSYS $FAIRROOT_BASE/fairsoft
+prepend-path FAIRROOTPATH $FAIRROOT_BASE/fairroot
+prepend-path EIGEN_INCLUDE_DIR $FAIRROOT_BASE/eigen/include/eigen3/
+prepend-path PCL_DIR $FAIRROOT_BASE/pcl/share/pcl-1.8/
+
+prepend-path LD_LIBRARY_PATH $FAIRROOT_BASE/fairsoft/lib
+prepend-path PATH $FAIRROOT_BASE/fairsoft/bin
+

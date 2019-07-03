@@ -1,0 +1,22 @@
+#%Module 1.0
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys        [uname sysname]
+set os         [uname release]
+
+set version 7.45
+
+set GARFIELD9_LEVEL $version
+set GARFIELD9_CURRPATH /mnt/misc/sw/x86_64/Debian/8/garfield-9/$GARFIELD9_LEVEL
+
+prepend-path PATH            $GARFIELD9_CURRPATH/bin
+
+proc ModulesHelp { } {
+  puts stderr " garfield-9 see http://garfield.web.cern.ch/garfield"
+  puts stderr " installed from Linux binary compiled 11/3/14 for SLC6"
+  puts stderr "-----------"
+  puts stderr ""
+}
+
+module-whatis   "garfield-9 simulates drift chambers ($GARFIELD9_LEVEL)"

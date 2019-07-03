@@ -1,0 +1,22 @@
+#%Module 1.0
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys        [uname sysname]
+set os         [uname release]
+
+set CMAKE_LEVEL 3.6.3
+set version $CMAKE_LEVEL
+
+set CMAKE_CURRPATH /mnt/misc/sw/x86_64/Debian/8/cmake/$CMAKE_LEVEL
+
+### you'd only need these for non-system-LLVM
+prepend-path PATH            $CMAKE_CURRPATH/bin
+
+proc ModulesHelp { } {
+  puts stderr " This module provides Kitware Cmake - cross platform make"
+  puts stderr "-----------"
+  puts stderr ""
+}
+
+module-whatis   "Kitware CMake - cross platform make"

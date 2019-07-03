@@ -1,0 +1,27 @@
+#%Module 1.0
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys        [uname sysname]
+set os         [uname release]
+
+set version 1.0.4
+set GALILSUITE_LEVEL $version
+
+set GALILSUITE_CURRPATH /mnt/misc/sw/x86_64/Debian/8/galilsuite/$GALILSUITE_LEVEL
+
+### you'd only need these for non-system-LLVM
+prepend-path PATH              $GALILSUITE_CURRPATH/usr/bin
+prepend-path LD_LIBRARY_PATH   $GALILSUITE_CURRPATH/usr/lib
+prepend-path DYLD_LIBRARY_PATH $GALILSUITE_CURRPATH/usr/lib
+prepend-path SHLIB_PATH        $GALILSUITE_CURRPATH/usr/lib
+prepend-path LIBPATH           $GALILSUITE_CURRPATH/usr/lib
+prepend-path INCPATH           $GALILSUITE_CURRPATH/usr/include
+
+proc ModulesHelp { } {
+  puts stderr " This module provides galilsuite and libraries"
+  puts stderr "-----------"
+  puts stderr ""
+}
+
+module-whatis   "GALILSUITE - 1.0.4"

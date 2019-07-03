@@ -1,0 +1,19 @@
+#%Module 1.0
+
+set _module_name  [module-info name]
+set is_module_rm  [module-info mode remove]
+set sys        [uname sysname]
+set os         [uname release]
+
+set arch         [uname machine]
+
+setenv GARFIELD_HOME /mnt/misc/sw/x86_64/Debian/8/garfieldpp/v2r0
+
+module load root/gnu/6.10.02
+
+proc ModulesHelp { } {
+  puts stderr " This module provides Garfield++"
+  puts stderr ""
+}
+
+module-whatis   "Garfield++ Version 2 Revision 0"

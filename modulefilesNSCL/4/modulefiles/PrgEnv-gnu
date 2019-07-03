@@ -1,0 +1,39 @@
+#%Module
+#
+# Module PrgEnv-gnu
+
+conflict PrgEnv
+conflict PrgEnv-intel
+conflict PrgEnv-pgi
+conflict PrgEnv-pathscale
+conflict PrgEnv-llvm
+
+# debian wheezy
+set version     0.0.1
+
+proc ModulesHelp { } {
+  puts stderr " This module is a wrapper for using the GNU toolchain"
+  puts stderr " and related tools"
+}
+
+module-whatis   "GNU compiler programming environment"
+
+# null for testing
+set mod_list {  gcc \
+}
+
+foreach prod $mod_list {
+  module unload ${prod}
+}
+
+foreach prod $mod_list {
+#  if { [file exists $alt2mhome/${prod}]  } {
+#       module load ${prod}
+#  } elseif { [file exists $alt1mhome/${prod}] } {
+#       module load $prod
+#  } elseif { [file exists $mfilehome/${prod}] } {
+#       module load $prod
+#  }
+  module load $prod
+}
+
