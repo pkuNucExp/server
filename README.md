@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 六 6月 29 21:56:56 2019 (+0800)
-;; Last-Updated: 二 8月  6 20:08:20 2019 (+0800)
+;; Last-Updated: 二 8月  6 20:34:55 2019 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 29
+;;     Update #: 30
 ;; URL: http://wuhongyi.cn -->
 
 # README
@@ -161,6 +161,10 @@ module load geant4/4.10.04p03
 ```
 
 记得删除 *.bashrc* 中之前 source 的配置。
+
+下图为吴鸿毅在服务器64上的个人配置
+
+![bashrc](img/wuhongyi64bashrc.png)
 
 
 
