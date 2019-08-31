@@ -11,6 +11,7 @@
 
 # 64服务器管理员配置
 
+## yum 程序安装
 
 ```bash
 yum install environment-modules
@@ -51,7 +52,20 @@ yum install lz4-devel.x86_64 ruby-devel.x86_64 expect-devel.x86_64  glew.x86_64 
 yum install httpd mod_wsgi
 ```
 
-  
+ ## port 端口开放
+ 
+ ```bash
+ # jupyter 默认端口，请不要长时间占用
+ sudo firewall-cmd --permanent --zone=public --add-port=8888/udp
+ sudo firewall-cmd --permanent --zone=public --add-port=8888/tcp
+ 
+ # 武晨光jupyter端口
+ sudo firewall-cmd --permanent --zone=public --add-port=8900/tcp
+ sudo firewall-cmd --permanent --zone=public --add-port=8900/udp
+ 
+ # 使最新的防火墙设置规则生效
+  sudo firewall-cmd --reload
+ ```
 
 
 
