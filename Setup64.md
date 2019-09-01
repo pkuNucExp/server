@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 二 8月  6 17:10:20 2019 (+0800)
-;; Last-Updated: 二 8月  6 18:26:38 2019 (+0800)
+;; Last-Updated: 日 9月  1 13:48:58 2019 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 9
+;;     Update #: 10
 ;; URL: http://wuhongyi.cn -->
 
 # 64服务器管理员配置
@@ -62,6 +62,8 @@ yum install httpd mod_wsgi
  # 武晨光jupyter端口
  sudo firewall-cmd --permanent --zone=public --add-port=8900/tcp
  sudo firewall-cmd --permanent --zone=public --add-port=8900/udp
+ sudo firewall-cmd --permanent --zone=public --add-port=8901/tcp
+ sudo firewall-cmd --permanent --zone=public --add-port=8901/udp
  
  # 使最新的防火墙设置规则生效
   sudo firewall-cmd --reload
