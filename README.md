@@ -4,14 +4,13 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 六 6月 29 21:56:56 2019 (+0800)
-;; Last-Updated: 日 9月  1 17:22:58 2019 (+0800)
+;; Last-Updated: 日 9月  1 20:07:46 2019 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 31
+;;     Update #: 33
 ;; URL: http://wuhongyi.cn -->
 
 # README
 
-- **服务器30中 root6 尚未安装**
 - 如果需要其它软件/版本，请联系管理员安装。
 - 安装多版本及多版本的任意切换，目的在于对软件进行测试。ROOT/GEANT4属于发展中的软件，还有很多问题，当你发现程序存在问题一直无法解决时，可以更换其它版本测试是否是该版本存在问题。
 
@@ -93,8 +92,8 @@ module load geant4/4.10.04p03
 	- 3.6.9 (ok)
 - root
 	- 5.34.38 (ok)
-	- 6.12.06 (no) 依赖gcc4.9.4,cmake3.7.2,python3.6.9
-	- 6.16.00 (no)
+	- 6.12.06 (ok) 依赖gcc4.9.4,cmake3.7.2,python3.6.9
+	- 6.16.00 (no) 依赖gcc4.9.4,cmake3.7.2,python3.6.9
 - geant4
 	- 4.9.6p04   (ok) 依赖gcc4.9.4,cmake3.7.2
 	- 4.10.00p04 (ok) 依赖gcc4.9.4,cmake3.7.2
@@ -166,6 +165,9 @@ module load geant4/4.10.04p03
 
 ![bashrc](img/wuhongyi64bashrc.png)
 
+## 关于网络
+
+30/64 服务器为数据处理服务器，为了安全，没有直接连上公网，当前通过我们的28网络服务器来作为中转。
 
 如果你需要访问外网下载或者上传数据，则在 *.bashrc* 添加以下配置即可
 

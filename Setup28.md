@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 六 8月 31 14:49:11 2019 (+0800)
-;; Last-Updated: 日 9月  1 17:12:08 2019 (+0800)
+;; Last-Updated: 日 9月  1 17:28:46 2019 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 9
+;;     Update #: 10
 ;; URL: http://wuhongyi.cn -->
 
 # README
@@ -43,6 +43,7 @@ cp squid.conf squid.conf_bak
 #添加以下信息
 #防止被人利用为HTTP代理，设置允许访问的IP地址                                   
 acl myip dst 162.105.151.64
+acl myip dst 162.105.151.30
 http_access deny !myip
 
 
