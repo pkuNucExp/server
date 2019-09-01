@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 六 6月 29 21:56:56 2019 (+0800)
-;; Last-Updated: 二 8月  6 20:34:55 2019 (+0800)
+;; Last-Updated: 日 9月  1 17:22:58 2019 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 30
+;;     Update #: 31
 ;; URL: http://wuhongyi.cn -->
 
 # README
@@ -167,6 +167,13 @@ module load geant4/4.10.04p03
 ![bashrc](img/wuhongyi64bashrc.png)
 
 
+如果你需要访问外网下载或者上传数据，则在 *.bashrc* 添加以下配置即可
+
+```bash
+#添加Proxy代理信息
+export http_proxy=http://162.105.151.28:3128/
+export https_proxy=http://162.105.151.28:3128/
+```
 
 ## 关于如何配置多版本
 
