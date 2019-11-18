@@ -4,16 +4,16 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 二 9月  3 10:54:59 2019 (+0800)
-;; Last-Updated: 二 9月  3 10:56:11 2019 (+0800)
+;; Last-Updated: 一 11月 18 12:04:16 2019 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 1
+;;     Update #: 2
 ;; URL: http://wuhongyi.cn -->
 
 # README
 
 ## 关闭SELINUX
 
-/etc/httpd/conf
+/etc/sysconfig/selinux
 
 ```bash
 # This file controls the state of SELinux on the system.                        
