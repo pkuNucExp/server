@@ -4,12 +4,15 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 二 8月  6 17:10:20 2019 (+0800)
-;; Last-Updated: 一 11月 25 11:23:22 2019 (+0800)
+;; Last-Updated: 三 2月 26 13:07:34 2020 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 11
+;;     Update #: 13
 ;; URL: http://wuhongyi.cn -->
 
 # 64服务器管理员配置
+
+YUM 源配置  /etc/yum.repos.d
+
 
 ## yum 程序安装
 
@@ -50,6 +53,9 @@ yum install lz4-devel.x86_64 ruby-devel.x86_64 expect-devel.x86_64  glew.x86_64 
 
 #moin
 yum install httpd mod_wsgi
+
+#TeamViewer
+yum -y install qt5-qtwebkit.x86_64 qt5-qtwebkit-devel.x86_64
 ```
 
  ## port 端口开放
