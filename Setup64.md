@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 二 8月  6 17:10:20 2019 (+0800)
-;; Last-Updated: 三 2月 26 13:07:34 2020 (+0800)
+;; Last-Updated: 五 3月 20 16:48:57 2020 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 13
+;;     Update #: 14
 ;; URL: http://wuhongyi.cn -->
 
 # 64服务器管理员配置
@@ -77,6 +77,14 @@ yum -y install qt5-qtwebkit.x86_64 qt5-qtwebkit-devel.x86_64
  sudo firewall-cmd --permanent --zone=public --add-port=8903/tcp
  sudo firewall-cmd --permanent --zone=public --add-port=8903/udp
   
+ #王翔jupyter端口
+ sudo firewall-cmd --permanent --zone=public --add-port=8904/tcp
+ sudo firewall-cmd --permanent --zone=public --add-port=8904/udp
+ sudo firewall-cmd --permanent --zone=public --add-port=8905/tcp
+ sudo firewall-cmd --permanent --zone=public --add-port=8905/udp
+  
+ 
+ 
  
  
  # 使最新的防火墙设置规则生效
