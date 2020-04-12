@@ -89,6 +89,13 @@ yum -y install qt5-qtwebkit.x86_64 qt5-qtwebkit-devel.x86_64
  sudo firewall-cmd --permanent --zone=public --add-port=8907/tcp
  sudo firewall-cmd --permanent --zone=public --add-port=8907/udp
   
+ # 李根jupyter端口
+ sudo firewall-cmd --permanent --zone=public --add-port=8908/tcp
+ sudo firewall-cmd --permanent --zone=public --add-port=8908/udp
+ sudo firewall-cmd --permanent --zone=public --add-port=8909/tcp
+ sudo firewall-cmd --permanent --zone=public --add-port=8909/udp
+  
+  
  
  # 使最新的防火墙设置规则生效
   sudo firewall-cmd --reload
