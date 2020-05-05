@@ -107,6 +107,16 @@ yum -y install qt5-qtwebkit.x86_64 qt5-qtwebkit-devel.x86_64
   sudo firewall-cmd --reload
  ```
 
+## SSH 服务安全设定
+sshd 的安全是指它在 Internet 上传递的数据是加密的，但 sshd 服务本身并不那样安全。sshd 安全设定从以下几个方面来进行：
+* 强化服务器软件本身的设定：/etc/ssh/sshd_config
+ * 禁止 root 和 nossh 群组用户使用 sshd 的服务；
+* 启动 ssh 服务在非正规端口，而非默认端口 22：很多 cracker 会使用扫描程序乱扫整个 Internet 的埠口漏洞，port 22 就是一个常被扫描的端口
+* TCP wrapper 的使用
+ * 只让本机以及区网内的主机来源通过 sshd 登入
+* Firewalld 的使用
+ * 取消端口 22 的放行，指定 IP 访问 ssh 开启的非正规端口
+
 
 
 <!-- Setup64.md ends here -->
