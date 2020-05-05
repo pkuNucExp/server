@@ -15,8 +15,8 @@
 * DELL PowerEdge R940xa 4U机架式服务器
   * CPU：4颗Intel Xeon Gold 6136 （3.0GHz/12C/24.19.25M Cache）
   * 内存：128GB RDIMM，速度高达 2933 MT/s
-  * 硬盘：2 $\times$ 600GB 10K RPM SAS 12Gbps 512e 2.5英寸热插拔硬盘 
-  * 网卡：Network Options 4 GbE端口 + 2$times$10GbE（配齐全光模块）
+  * 硬盘：2个600GB 10K RPM SAS 12Gbps 512e 2.5英寸热插拔硬盘 
+  * 网卡：Network Options 4 GbE端口 + 2个10GbE（配齐全光模块）
   * 阵列卡：PERC H730P RAID 控制器，2GB NV 缓存
   * 电源：多个冗余热插拔电源1100W 
   * 配件：配置原装导轨； 
