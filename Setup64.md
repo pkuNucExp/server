@@ -113,7 +113,12 @@ yum -y install qt5-qtwebkit.x86_64 qt5-qtwebkit-devel.x86_64
  sudo firewall-cmd --permanent --zone=public --add-port=8910/udp
  sudo firewall-cmd --permanent --zone=public --add-port=8911/tcp
  sudo firewall-cmd --permanent --zone=public --add-port=8911/udp
-  
+    
+ # 陈家豪jupyter端口
+ sudo firewall-cmd --permanent --zone=public --add-port=8912/tcp
+ sudo firewall-cmd --permanent --zone=public --add-port=8912/udp
+ sudo firewall-cmd --permanent --zone=public --add-port=8913/tcp
+ sudo firewall-cmd --permanent --zone=public --add-port=8913/udp
   
  
  # 使最新的防火墙设置规则生效
