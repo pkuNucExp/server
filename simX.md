@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 六 8月 15 15:06:03 2020 (+0800)
-;; Last-Updated: 六 8月 15 15:10:26 2020 (+0800)
+;; Last-Updated: 一 8月 17 12:07:27 2020 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 1
+;;     Update #: 2
 ;; URL: http://wuhongyi.cn -->
 
 # simX
@@ -41,6 +41,17 @@ module load root/6.12.06
 /opt/simX/runner
 ```
 
+
+**DrawSetup**
+
+可执行程序
+
+```bash
+/opt/Drawer/DrawSetup
+```
+
+
+当前缺少 http://www.povray.org/download/linux.php
 
 
 
