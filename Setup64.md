@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 二 8月  6 17:10:20 2019 (+0800)
-;; Last-Updated: 五 3月 20 16:48:57 2020 (+0800)
+;; Last-Updated: 三 8月 19 09:09:57 2020 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 14
+;;     Update #: 15
 ;; URL: http://wuhongyi.cn -->
 
 # 64服务器管理员配置
@@ -52,6 +52,9 @@ yum install fuse-exfat.x86_64 exfat-utils.x86_64
 
 #hdf5
 yum install hdf5.x86_64  hdf5-devel.x86_64 hdf5-mpich.x86_64 hdf5-mpich-devel.x86_64  hdf5-openmpi.x86_64 hdf5-openmpi-devel.x86_64
+
+#UnitTest++
+yum -y install unittest-cpp.x86_64 unittest-cpp-devel.x86_64
 
 
 #python3
