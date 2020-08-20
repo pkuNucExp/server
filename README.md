@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 六 6月 29 21:56:56 2019 (+0800)
-;; Last-Updated: 四 8月 20 16:20:45 2020 (+0800)
+;; Last-Updated: 四 8月 20 21:01:23 2020 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 37
+;;     Update #: 38
 ;; URL: http://wuhongyi.cn -->
 
 # README
@@ -173,7 +173,7 @@ module load geant4/4.10.04p03
 
 首先找管理管分配端口号。
 
-然后复制参考配置文件 */data/d3/README/jupyter_notebook_config.py* 到个人的某个文件夹。该文件夹为您 jupyter 的根目录。
+然后复制参考配置文件 */data/d3/README/jupyter_notebook_config.py* 到服务器上个人的某个文件夹。该文件夹为您 jupyter 的根目录。
 
 文件的头部会有端口、密码的配置。
 
