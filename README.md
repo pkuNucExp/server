@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 六 6月 29 21:56:56 2019 (+0800)
-;; Last-Updated: 三 8月 12 15:06:44 2020 (+0800)
+;; Last-Updated: 四 8月 20 16:20:45 2020 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 36
+;;     Update #: 37
 ;; URL: http://wuhongyi.cn -->
 
 # README
@@ -168,6 +168,59 @@ module load geant4/4.10.04p03
 下图为吴鸿毅在服务器64上的个人配置
 
 ![bashrc](img/wuhongyi64bashrc.png)
+
+## 关于 jupyter
+
+首先找管理管分配端口号。
+
+然后复制参考配置文件 */data/d3/README/jupyter_notebook_config.py* 到个人的某个文件夹。该文件夹为您 jupyter 的根目录。
+
+文件的头部会有端口、密码的配置。
+
+
+
+```bash
+#将 8888 改成您的端口号
+c.NotebookApp.port = 8888
+```
+
+查询个人分配的端口 [端口号查询](Setup64.md)
+
+如果需要设置访问密码
+
+```bash
+#设置访问密码 本设置的密码为 wuhongyi ，需要修改成您自己的密码
+c.NotebookApp.password = u'sha1:b4312c4fb8b5:e239f220fa9fc697668ec3dc71b4180ee8854dac'
+```
+
+如果没有设置密码（将该行设置注释掉），那么在访问网页的时候，会要求输入 token ，token 在终端的输出信息中有。
+
+建议配置个人密码，方便访问。生成密码的方式如下：
+
+打开ipython, 创建一个密文密码
+
+```bash
+In [1]: from notebook.auth import passwd
+
+In [2]: passwd()
+Enter password: 
+Verify password: 
+Out[2]: 'sha1:ecff44b879cd:35b5b64072d286b66f0d8f84a41dbf7515d21755'
+```
+
+把生成的密文 *sha1:ec…* 复制下来替换成以上配置文件中的密码。
+
+完成以上配置之后，即可启动 jupyter。将终端进入到放置 *jupyter_notebook_config.py* 文件的目录。然后执行以下命令：
+
+```bash
+root --notebook
+```
+
+之后，您可在任意电脑中通过 *xxx.xxx.xxx.64:8888* 来访问。（其中xxx 为 64 服务器 IP，8888 替换成您的端口号）
+
+如果要让该服务保持在后台，可以使用 **screen** 命令。
+
+
 
 ## 关于网络
 
