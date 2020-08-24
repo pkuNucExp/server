@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 一 8月 24 16:58:46 2020 (+0800)
-;; Last-Updated: 一 8月 24 17:29:33 2020 (+0800)
+;; Last-Updated: 一 8月 24 17:30:36 2020 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 3
+;;     Update #: 4
 ;; URL: http://wuhongyi.cn -->
 
 # nushellx
@@ -31,7 +31,7 @@ export toi_data=/opt/nushellx/toi/toi-data/
 执行以下命令
 
 ```bash
-/opt/nushellx/linux/nushellx-gfortran-bin/shell
+shell
 ```
 
 输入相应参数之后，会生成 xxx.bat 文件
