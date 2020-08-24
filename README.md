@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 六 6月 29 21:56:56 2019 (+0800)
-;; Last-Updated: 四 8月 20 21:01:23 2020 (+0800)
+;; Last-Updated: 一 8月 24 16:58:58 2020 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 38
+;;     Update #: 40
 ;; URL: http://wuhongyi.cn -->
 
 # README
@@ -219,6 +219,9 @@ root --notebook
 之后，您可在任意电脑中通过 *xxx.xxx.xxx.64:8888* 来访问。（其中xxx 为 64 服务器 IP，8888 替换成您的端口号）
 
 如果要让该服务保持在后台，可以使用 **screen** 命令。
+
+
+
 
 
 
