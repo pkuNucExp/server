@@ -4,14 +4,15 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 二 8月  6 17:10:20 2019 (+0800)
-;; Last-Updated: 四 8月 20 15:56:44 2020 (+0800)
+;; Last-Updated: 六 8月 29 21:40:25 2020 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 16
+;;     Update #: 18
 ;; URL: http://wuhongyi.cn -->
 
 # 64服务器管理员配置
 
 ## 硬件信息
+
 * DELL PowerEdge R940xa 4U机架式服务器
   * CPU：4颗Intel Xeon Gold 6136 （3.0GHz/12C/24.19.25M Cache）
   * 内存：128GB RDIMM，速度高达 2933 MT/s
@@ -28,7 +29,9 @@
   * 合计：26400
 
 ## yum 程序安装
+
 YUM 源配置  /etc/yum.repos.d
+
 ```bash
 yum install environment-modules
 
@@ -74,68 +77,34 @@ yum install httpd mod_wsgi
 yum -y install qt5-qtwebkit.x86_64 qt5-qtwebkit-devel.x86_64
 ```
 
- ## port 端口开放
- 
- ```bash
- # jupyter 默认端口，请不要长时间占用
- sudo firewall-cmd --permanent --zone=public --add-port=8888/udp
- sudo firewall-cmd --permanent --zone=public --add-port=8888/tcp
- 
- # 武晨光jupyter端口
- sudo firewall-cmd --permanent --zone=public --add-port=8900/tcp
- sudo firewall-cmd --permanent --zone=public --add-port=8900/udp
- sudo firewall-cmd --permanent --zone=public --add-port=8901/tcp
- sudo firewall-cmd --permanent --zone=public --add-port=8901/udp
- 
- # 金瑜jupyter端口
- sudo firewall-cmd --permanent --zone=public --add-port=8902/tcp
- sudo firewall-cmd --permanent --zone=public --add-port=8902/udp
- sudo firewall-cmd --permanent --zone=public --add-port=8903/tcp
- sudo firewall-cmd --permanent --zone=public --add-port=8903/udp
-  
- #王翔jupyter端口
- sudo firewall-cmd --permanent --zone=public --add-port=8904/tcp
- sudo firewall-cmd --permanent --zone=public --add-port=8904/udp
- sudo firewall-cmd --permanent --zone=public --add-port=8905/tcp
- sudo firewall-cmd --permanent --zone=public --add-port=8905/udp
- 
- # 韩家兴jupyter端口
- sudo firewall-cmd --permanent --zone=public --add-port=8906/tcp
- sudo firewall-cmd --permanent --zone=public --add-port=8906/udp
- sudo firewall-cmd --permanent --zone=public --add-port=8907/tcp
- sudo firewall-cmd --permanent --zone=public --add-port=8907/udp
-  
- # 李根jupyter端口
- sudo firewall-cmd --permanent --zone=public --add-port=8908/tcp
- sudo firewall-cmd --permanent --zone=public --add-port=8908/udp
- sudo firewall-cmd --permanent --zone=public --add-port=8909/tcp
- sudo firewall-cmd --permanent --zone=public --add-port=8909/udp
-  
- # 吴鸿毅jupyter端口
- sudo firewall-cmd --permanent --zone=public --add-port=8910/tcp
- sudo firewall-cmd --permanent --zone=public --add-port=8910/udp
- sudo firewall-cmd --permanent --zone=public --add-port=8911/tcp
- sudo firewall-cmd --permanent --zone=public --add-port=8911/udp
-    
- # 陈家豪jupyter端口
- sudo firewall-cmd --permanent --zone=public --add-port=8912/tcp
- sudo firewall-cmd --permanent --zone=public --add-port=8912/udp
- sudo firewall-cmd --permanent --zone=public --add-port=8913/tcp
- sudo firewall-cmd --permanent --zone=public --add-port=8913/udp
-  
- # 李智焕jupyter端口
- sudo firewall-cmd --permanent --zone=public --add-port=8914/tcp
- sudo firewall-cmd --permanent --zone=public --add-port=8914/udp
- sudo firewall-cmd --permanent --zone=public --add-port=8915/tcp
- sudo firewall-cmd --permanent --zone=public --add-port=8915/udp
-    
-  
- 
- # 使最新的防火墙设置规则生效
-  sudo firewall-cmd --reload
- ```
+## port 端口开放
+
+jupyter 已分配端口号
+
+- 8888 默认端口，请不要长时间占用
+- 8900/8901 武晨光
+- 8902/8903 金瑜
+- 8904/8905 王翔
+- 8906/8907 韩家兴
+- 8908/8909 李根
+- 8910/8911 吴鸿毅
+- 8912/8913 陈家豪
+- 8914/8915 李智焕
+- 8916/8917 郭成宇
+
+```bash
+#端口分配,将 xxxx 替换成端口号
+sudo firewall-cmd --permanent --zone=public --add-port=xxxx/udp
+sudo firewall-cmd --permanent --zone=public --add-port=xxxx/tcp
+
+# 使最新的防火墙设置规则生效
+sudo firewall-cmd --reload
+```
+
+
 
 ## SSH 服务安全设定
+
 sshd 的安全是指它在 Internet 上传递的数据是加密的，但 sshd 服务本身并不那样安全。sshd 安全设定从以下几个方面来进行：
 * 强化服务器软件本身的设定：/etc/ssh/sshd_config
   * 禁止 root 和 nossh 群组用户使用 sshd 的服务；
