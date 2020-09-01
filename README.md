@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 六 6月 29 21:56:56 2019 (+0800)
-;; Last-Updated: 一 8月 24 16:58:58 2020 (+0800)
+;; Last-Updated: 二 9月  1 18:51:48 2020 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 40
+;;     Update #: 41
 ;; URL: http://wuhongyi.cn -->
 
 # README
@@ -221,8 +221,10 @@ root --notebook
 如果要让该服务保持在后台，可以使用 **screen** 命令。
 
 
+## 其它软件
 
-
+- [nushellx](nushellx.md)
+- [RadWare](RadWare.md)
 
 
 ## 关于网络

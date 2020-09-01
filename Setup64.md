@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 二 8月  6 17:10:20 2019 (+0800)
-;; Last-Updated: 日 8月 30 13:31:16 2020 (+0800)
+;; Last-Updated: 二 9月  1 18:50:07 2020 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 19
+;;     Update #: 20
 ;; URL: http://wuhongyi.cn -->
 
 # 64服务器管理员配置
@@ -27,6 +27,34 @@
   * 4条3米LC-LC线100*4=400
   * 双口万兆卡4200
   * 合计：26400
+
+## port 端口开放
+
+jupyter 已分配端口号
+
+- 8888 默认端口，请不要长时间占用
+- 8900/8901 武晨光
+- 8902/8903 金瑜
+- 8904/8905 王翔
+- 8906/8907 韩家兴
+- 8908/8909 李根
+- 8910/8911 吴鸿毅
+- 8912/8913 陈家豪
+- 8914/8915 李智焕
+- 8916/8917 郭成宇
+- 8918/8919 周振翔
+
+
+```bash
+#端口分配,将 xxxx 替换成端口号
+sudo firewall-cmd --permanent --zone=public --add-port=xxxx/udp
+sudo firewall-cmd --permanent --zone=public --add-port=xxxx/tcp
+
+# 使最新的防火墙设置规则生效
+sudo firewall-cmd --reload
+```
+
+
 
 ## yum 程序安装
 
@@ -76,33 +104,6 @@ yum install httpd mod_wsgi
 #TeamViewer
 yum -y install qt5-qtwebkit.x86_64 qt5-qtwebkit-devel.x86_64
 ```
-
-## port 端口开放
-
-jupyter 已分配端口号
-
-- 8888 默认端口，请不要长时间占用
-- 8900/8901 武晨光
-- 8902/8903 金瑜
-- 8904/8905 王翔
-- 8906/8907 韩家兴
-- 8908/8909 李根
-- 8910/8911 吴鸿毅
-- 8912/8913 陈家豪
-- 8914/8915 李智焕
-- 8916/8917 郭成宇
-- 8918/8919 周振翔
-
-
-```bash
-#端口分配,将 xxxx 替换成端口号
-sudo firewall-cmd --permanent --zone=public --add-port=xxxx/udp
-sudo firewall-cmd --permanent --zone=public --add-port=xxxx/tcp
-
-# 使最新的防火墙设置规则生效
-sudo firewall-cmd --reload
-```
-
 
 
 ## SSH 服务安全设定
