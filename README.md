@@ -127,6 +127,7 @@ module load geant4/4.10.04p03
 - gcc
 	- 4.9.2 系统默认
 	- 7.3.0 (ok)
+	- 9.3.0 (ok)
 - cmake
 	- 3.10.3  系统默认
 - emacs	
