@@ -244,8 +244,12 @@ export https_proxy=http://162.105.151.28:3128/
 
 如果你对如何实现软件多版本配置感兴趣，可查看 **/etc/modulefiles** 目录下的配置，以及 Baidu/Google 关键词 **Environment Modules**。
 
+## 并行编程指南
 
+写了一份并行编程指南，讲解并行编程和如何使用CUDA。
 
+[点击这里！](https://goodcucumber.github.io/x40paraguide/)
 
+一些例子程序在 ->[这里](https://github.com/goodcucumber/x40paraguide/tree/master/samples)<-
 	
 <!-- README.md ends here -->
