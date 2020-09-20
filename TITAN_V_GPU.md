@@ -60,3 +60,16 @@ module load cuda/11.0.3
 ```
 
 来载入cuda模块。
+
+## 允许非root用户对CUDA程序进行分析
+
+2020.09.20
+
+在/etc/modprobe.d/下新建了一个文件nsight-compute-profile.conf
+
+内容是options nvidia "NVreg_RestrictProfilingToAdminUsers=0"
+
+该设置在每次系统启动时会影响显卡驱动，使得非root用户可以使用Nsight Compute等工具对CUDA程序运行状况进行分析。
+
+详细情况可参考 [https://developer.nvidia.com/nvidia-development-tools-solutions-ERR_NVGPUCTRPERM-permission-issue-performance-counters](https://developer.nvidia.com/nvidia-development-tools-solutions-ERR_NVGPUCTRPERM-permission-issue-performance-counters)
+
