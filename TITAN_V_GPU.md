@@ -25,7 +25,7 @@ cuda_11.0.3_450.51.06_linux.run文件包含了显卡驱动和cuda开发环境，
 
 第三步安装cuda时去掉driver一项（因为前面一步已经安装过了）。同时在option中去掉了为每一位用户创建快捷方式的选项。
 
-上述.run文件均可在`/home/gaoj/download`目录下找到。
+上述.run文件均可在`/data/d1/gj/nvdriver`目录下找到。
 
 ## 失败案例
 
