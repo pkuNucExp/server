@@ -73,3 +73,12 @@ module load cuda/11.0.3
 
 详细情况可参考 [https://developer.nvidia.com/nvidia-development-tools-solutions-ERR_NVGPUCTRPERM-permission-issue-performance-counters](https://developer.nvidia.com/nvidia-development-tools-solutions-ERR_NVGPUCTRPERM-permission-issue-performance-counters)
 
+### Update 2020.09.21
+
+允许非管理员访问性能计数器会引入一些漏洞，参见[https://nvidia.custhelp.com/app/answers/detail/a_id/4738](https://nvidia.custhelp.com/app/answers/detail/a_id/4738), [https://nvidia.custhelp.com/app/answers/detail/a_id/4772](https://nvidia.custhelp.com/app/answers/detail/a_id/4772)和[https://www.cs.ucr.edu/~zhiyunq/pub/ccs18_gpu_side_channel.pdf](https://www.cs.ucr.edu/~zhiyunq/pub/ccs18_gpu_side_channel.pdf). 
+
+如果黑客可以登录服务器，那么将有可能探测到正在显卡上运行的程序的一些信息。上面的pdf里提到了可以探测到一些神经网络的神经元数量等信息。
+
+通常来说，我们使用的算法并不是商业机密，所以上述漏洞并不会对服务器和用户构成很大的威胁，因此打开了允许非管理员用户访问性能计数器的选项。
+
+（实施攻击的前提是可以登录服务器，然而可以探测到的信息相比数据和源代码十分有限，而且无法对服务器造成破坏，因此其风险远小于账户和密码泄露）。
