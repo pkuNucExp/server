@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 六 6月 29 21:56:56 2019 (+0800)
-;; Last-Updated: 五 10月  2 19:08:04 2020 (+0800)
+;; Last-Updated: 五 10月  9 17:03:58 2020 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 42
+;;     Update #: 43
 ;; URL: http://wuhongyi.cn -->
 
 # README
@@ -153,6 +153,8 @@ module load geant4/4.10.04p03
 	- 4.10.04p03 (ok) 
 	- 4.10.05p01 (ok) 
 	- 4.10.06p02 (ok)
+- opencv
+	- 4.4.0 (ok)
 
 懒人模式，快速配置 ROOT/GEANT4，在 *.bashrc* 添加以下配置即可
 
