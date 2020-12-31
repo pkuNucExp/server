@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 六 6月 29 21:56:56 2019 (+0800)
-;; Last-Updated: 五 10月  9 17:03:58 2020 (+0800)
+;; Last-Updated: 四 12月 31 16:23:34 2020 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 43
+;;     Update #: 44
 ;; URL: http://wuhongyi.cn -->
 
 # README
@@ -226,6 +226,7 @@ root --notebook
 
 ## 其它软件
 
+- [Visual Studio Code](VisualStudioCode.md)
 - [nushellx](nushellx.md)
 - [RadWare](RadWare.md)
 - [GRAZING](GRAZING.md)
