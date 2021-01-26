@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 二 8月  6 17:10:20 2019 (+0800)
-;; Last-Updated: 二 9月  1 18:50:07 2020 (+0800)
+;; Last-Updated: 二 1月 26 22:07:39 2021 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 20
+;;     Update #: 22
 ;; URL: http://wuhongyi.cn -->
 
 # 64服务器管理员配置
@@ -27,6 +27,12 @@
   * 4条3米LC-LC线100*4=400
   * 双口万兆卡4200
   * 合计：26400
+
+## 保留端口
+
+- 61208 glances
+	- 访问模式 http://xxx.xxx.xxx.64:61208/
+
 
 ## port 端口开放
 
