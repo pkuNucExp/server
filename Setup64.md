@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 二 8月  6 17:10:20 2019 (+0800)
-;; Last-Updated: 日 5月  2 12:49:19 2021 (+0800)
+;; Last-Updated: 五 8月 13 20:24:34 2021 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 23
+;;     Update #: 24
 ;; URL: http://wuhongyi.cn -->
 
 # 64服务器管理员配置
@@ -113,6 +113,9 @@ yum install httpd mod_wsgi
 
 #TeamViewer
 yum -y install qt5-qtwebkit.x86_64 qt5-qtwebkit-devel.x86_64
+
+
+yum install telnet.x86_64
 ```
 
 
