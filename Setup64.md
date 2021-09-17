@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 二 8月  6 17:10:20 2019 (+0800)
-;; Last-Updated: 五 8月 13 20:24:34 2021 (+0800)
+;; Last-Updated: 五 9月 17 21:38:09 2021 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 24
+;;     Update #: 25
 ;; URL: http://wuhongyi.cn -->
 
 # 64服务器管理员配置
@@ -52,7 +52,7 @@ jupyter 已分配端口号
 - 8924/8925 胡梓瑶
 - 8926/8927 张集智
 - 8928/8929 倪磊
-
+- 8930/8931 张思洋
 
 
 ```bash
