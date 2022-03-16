@@ -134,6 +134,7 @@ sleep 10s && mount -t xfs UUID=a9c5eb55-d3dd-4b74-bfad-3ee4734ebe81 /data/d1 &
 sleep 10s && mount -t xfs UUID=7e5ff28b-3d14-40a6-8c5b-eac71b4cf2ed /data/d2 &
 sleep 10s && mount -t xfs UUID=39b59495-97eb-4f56-ad0e-10309c3aa4c0 /data/d3 &
 sleep 20s && mount -t xfs UUID=faf465b6-4c68-4ce6-a3dc-7d70b4b53964 /databck &
+sleep 20s && mount -t ntfs UUID=D892C29B92C27D8E /wuhongyi1 &
 # linux根据开机检测顺序来命名磁盘sda,sdb,…
 # USB设备会最先被检测到而被命名为sda，系统盘和数据盘则顺延。所以尽量不要用sda，而是用UUID或挂载目录.
 ```
