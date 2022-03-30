@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 六 6月 29 21:56:56 2019 (+0800)
-;; Last-Updated: 四 12月 31 16:23:34 2020 (+0800)
+;; Last-Updated: 三 3月 30 10:49:54 2022 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 44
+;;     Update #: 45
 ;; URL: http://wuhongyi.cn -->
 
 # README
@@ -144,6 +144,7 @@ module load geant4/4.10.04p03
 	- 6.12.06 (ok)
 	- 6.14.06 (ok)
 	- 6.16.00 (ok)
+	- 6.20.06 (ok)
 - geant4
 	- 4.9.6p04   (ok) 
 	- 4.10.00p04 (ok) 
