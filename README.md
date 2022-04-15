@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 六 6月 29 21:56:56 2019 (+0800)
-;; Last-Updated: 三 3月 30 10:49:54 2022 (+0800)
+;; Last-Updated: 五 4月 15 15:58:15 2022 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 45
+;;     Update #: 46
 ;; URL: http://wuhongyi.cn -->
 
 # README
@@ -153,7 +153,8 @@ module load geant4/4.10.04p03
 	- 4.10.03p03 (ok) 
 	- 4.10.04p03 (ok) 
 	- 4.10.05p01 (ok) 
-	- 4.10.06p02 (ok)
+	- 4.10.06p03 (ok)
+	- 4.10.07p03 (ok)
 - opencv
 	- 4.4.0 (ok)
 
