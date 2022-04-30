@@ -34,17 +34,30 @@
   * 售后联系人：唐尊龙（13552981464、微信号tzlxj1168）
   * ![image-20211014200059236](img/image-20211014200059236.png)
 
-## 保留端口
 
-- 61208 glances
+
+## 端口开放
+
+### 配置方法
+
+```bash
+#端口分配,将 xxxx 替换成端口号
+sudo firewall-cmd --permanent --zone=public --add-port=xxxx/udp
+sudo firewall-cmd --permanent --zone=public --add-port=xxxx/tcp
+
+# 使最新的防火墙设置规则生效
+sudo firewall-cmd --reload
+```
+
+### glances
+
+- 61208
 	- 访问模式 http://xxx.xxx.xxx.64:61208/
 
 
-## port 端口开放
+### jupyter
 
-jupyter 已分配端口号
-
-- 8888 默认端口，请不要长时间占用
+- 8888 默认端口（请不要长时间占用）
 - 8900/8901 罗迪雯
 - 8902/8903 金瑜
 - 8904-8907 韩家兴
@@ -62,14 +75,6 @@ jupyter 已分配端口号
 - 8930/8931 张思洋
 
 
-```bash
-#端口分配,将 xxxx 替换成端口号
-sudo firewall-cmd --permanent --zone=public --add-port=xxxx/udp
-sudo firewall-cmd --permanent --zone=public --add-port=xxxx/tcp
-
-# 使最新的防火墙设置规则生效
-sudo firewall-cmd --reload
-```
 
 ## yum 程序安装
 
@@ -125,11 +130,13 @@ yum install pandoc
 yum install texlive-xetex-bin.x86_64 texlive-xecjk.noarch
 ```
 
+
+
 ## 外挂磁盘阵列相关设定
 
 ### 开机后自动挂载
 
-开机流程中/etc/fstab的执行在网络服务启动之前，因此无法利用其开机自动挂载磁盘阵列。sleep 10s也是为了确保网络服务完全启动之后才去挂载磁盘阵列。
+* 开机流程中/etc/fstab的执行在网络服务启动之前，因此无法利用其开机自动挂载磁盘阵列。sleep 10s也是为了确保网络服务完全启动之后才去挂载磁盘阵列。
 
 ```bash
 [root~]# vi /etc/rc.d/rc.local (在最后加入以下几行)
@@ -214,6 +221,8 @@ sleep 20s && mount -t ntfs UUID=D892C29B92C27D8E /wuhongyi1 &
 /data1/img:                1757c
 ```
 
+
+
 ## SSH 服务安全设定
 
 sshd 的安全是指它在 Internet 上传递的数据是加密的，但 sshd 服务本身并不那样安全。sshd 安全设定从以下几个方面来进行：
@@ -254,6 +263,39 @@ sshd 的安全是指它在 Internet 上传递的数据是加密的，但 sshd �
     [root@ ~]$ firewall-cmd --permanent --zone=public –add-port=2727/tcp
     [root@ ~]$ firewall-cmd --reload
     ```
+
+
+
+## 远程登入提示字符串
+
+```bash
+[root@pkuser ~] vi /etc/motd
+^[[H^[[2J
+          **
+        /    \
+   jGj.f      f.tGj
+ t     Lf;  ;fL     t
+ .        **        .
+ E      /     \     E
+ .     .       .    .
+  G  f    ^[[01;33m # ^[[0m   f  G
+   \/ .   ^[[01;33m#*#^[[0m  . \/     ^[[01;31m Welcome       ^[[0m
+   /\ .   ^[[01;33m#*#^[[0m  . /\     ^[[01;34m PKNU Server 30^[[0m
+  G  f    ^[[01;33m # ^[[0m   f  K
+ .    .        .    .
+ E      G    j      E
+.         **        .
+t     Lf;  ;fL     t
+ 'jGi.f      f.jGj'
+       \    /
+         **
+
+#====================== Recent Notes ===========================#
+   1. ^[[01;32m Please set your password as complex as possible ! ^[[0m
+   2. ^[[01;32m Please join the WeChat group and receive latest notifications ! ^[[0m
+   3. ^[[01;32m The disk quota of home directory for each user is 20G ! ^[[0m
+#===============================================================#
+```
 
 
 
