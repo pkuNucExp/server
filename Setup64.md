@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 二 8月  6 17:10:20 2019 (+0800)
-;; Last-Updated: 四 4月 21 08:59:03 2022 (+0800)
+;; Last-Updated: 四 8月 25 11:44:46 2022 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 28
+;;     Update #: 30
 ;; URL: http://wuhongyi.cn -->
 
 # 64服务器管理员配置
@@ -129,6 +129,8 @@ yum install telnet.x86_64
 
 yum install pandoc
 yum install texlive-xetex-bin.x86_64 texlive-xecjk.noarch
+
+yum install grace.x86_64 grace-devel.x86_64
 ```
 
 
