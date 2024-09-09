@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 二 8月  6 17:10:20 2019 (+0800)
-;; Last-Updated: 四 9月 29 10:31:18 2022 (+0800)
+;; Last-Updated: 一 9月  9 16:27:22 2024 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 31
+;;     Update #: 33
 ;; URL: http://wuhongyi.cn -->
 
 # 64服务器管理员配置
@@ -76,7 +76,7 @@ sudo firewall-cmd --reload
 - 8930/8931 张思洋
 - 8932/8933 任宇轩 
 - 8934/8935 易佳怡
-
+- 8936/8937 王锦非
 
 
 ## yum 程序安装
